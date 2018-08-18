@@ -162,7 +162,7 @@ function retrievestate() {
 	caderno.innerHTML = localStorage.caderno;
 	localStorage.qtdtarefa = localStorage.qtdtarefa;
 	//APAGAR HISTÓRICO DO JS
-	localStorage.clear();
+	//localStorage.clear();
 	
 	}
 };
