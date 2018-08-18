@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+	<head>
+		<!--INICIO CSS-->
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+		<!--FONTE ROBOTO-->
+		<link rel="stylesheet" type="text/css" href="fontes/roboto/roboto.css" media="all">
+		<!--Fonte FontAwesome-->
+		<link rel="stylesheet" type="text/css" href="fontes/fontawesome/css/all.css" media="all">
+		<!--FIM CSS-->
+	</head>
+	
+	<body>
+	
+		<!--INICIO MENU-->
+		<nav>
+			<ul class="menu-principal">
+				<li><i class="fas fa-bars"></i></li>
+				<li class="ativo">My Tasks</li>
+				<li>Inbox</li>
+				<li class="plus">+</li>
+			</ul>
+			
+			<div class="search">
+				<input type="search" placeholder="Search">
+			</div>
+			<div class="user-menu">
+				<p>Help<i class="fas fa-angle-down"></i></p>
+				<p>Personal Projects</p>
+				<img src="img/user.jpg" alt="Avatar do Usuário" title="Avatar do Usuário">
+			</div>
+		</nav>
+		<aside>
+			<div class="head">
+				<img src="img/user.jpg" alt="Avatar do Usuário" title="Avatar do Usuário">
+				<h3>My Personal Tasks</h1>
+				<i class="fas fa-angle-down"></i>
+			</div>
+			<div class="minimizar">
+				<i class="fas fa-angle-double-up"></i>
+			</div>
+		</aside>
+		<!--FIM MENU-->
+		
+		
+		
+		
+		<main>
+			<!--INICIO CORPO TAREFAS-->
+			<div class="tarefas" id="caderno" >
+				<div class="topo">
+					<div id="" class="add-job" onclick="numTarefas();openNav();novaTarefa();selecionaTarefa();">Add Task</div>
+					<div class="conf"><i class="fas fa-cog"></i></div>
+					<input type="hidden" value="23" id="vartarefa">
+				</div>
+				<div id="listagem" ondragover="allowDrop(event)" ondrop="drop(event)">
+	
+				</div>
+
+			</div>
+			<!--FIM CORPO TAREFAS-->
+			
+			<!--INICIO MODAL TAREFA-->
+			<div id="addTarefa" class="sidenav">
+				<div id="conteudo">
+					<div class="topo">
+						<img src="img/user.jpg" alt="Avatar do Usuário" title="Avatar do Usuário">
+						<p>Matheus Prado</p>
+						<div class="icon-circle"></div>
+						<div class="calendario"><i class="far fa-calendar-alt"></i><p>Due Date</p></div>
+						<div class="circulo"><i class="far fa-heart"></i></div>
+						<div class="circulo"><i class="fas fa-code-branch"></i></div>
+						<div class="circulo"><i class="fas fa-paperclip"></i></i></div>
+						<div class="circulo"><i class="fas fa-ellipsis-h"></i></div>
+						<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+					</div>
+					<div class="corpo">
+						<div class="input-titulo">
+							<i class="fas fa-check"></i>
+							<input type='text'  class='tarinput' id='tarinput' placeholder="New Task">
+						</div>
+						<div class="input-desc">
+							<textarea type='text' class='descinput' id='descinput' placeholder="Description"></textarea>
+						</div>
+					</div>
+					<div class="comentario">
+						<img src="img/user.jpg" alt="Avatar do Usuário" title="Avatar do Usuário">
+						<textarea type="text" class="cominput" id="cominput" placeholder="Write a comment..."></textarea>
+					</div>
+				</div>
+			</div>
+			<!--FIM MODAL TAREFA-->
+		</main>
+		
+		
+		<!--INICIO SCRIPT-->
+		<script type="text/javascript" src="js/script.js"></script>
+		<!--FIM SCRIPT-->
+	</body>
+	
+</html>
+
+
+
+
+
+
+
