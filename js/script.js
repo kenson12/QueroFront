@@ -58,12 +58,12 @@ storestate();
 function qual_tarefa(clicked_id){
 	
     var tarefas = clicked_id;
-	var inputConteudo = document.getElementById(clicked_id).childNodes[0].nodeValue;
+	var inputConteudo = document.getElementById(clicked_id).innerHTML ;
 	console.log(localStorage.qtdtarefa);
 	
 	/*Altera o Valor da Div Clicada pelo Valor Adicionado no Input*/
 	inputTar.onkeyup = function(){
-			document.getElementById(tarefas).childNodes[0].nodeValue = inputTar.value;
+			document.getElementById(tarefas).innerHTML = inputTar.value;
 		}
 	/*Muda o Valor do Input com a ID Clicada*/
 	document.getElementById('tarinput').value = inputConteudo; 
