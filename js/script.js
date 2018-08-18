@@ -115,8 +115,7 @@ function novaTarefa() {
 		node.setAttribute("class", "job");
 		node.setAttribute("draggable", "true");
 		node.setAttribute("ondragstart", "drag(event)");
-		node.setAttribute("ondrop", "return false");
-		node.setAttribute("ondragover", "dntDrop(event)");
+		
 		node.focus();
 		/*Cria uma Tarefa Nova*/
 		var textnode = document.createTextNode('');
@@ -162,7 +161,7 @@ function retrievestate() {
 	caderno.innerHTML = localStorage.caderno;
 	localStorage.qtdtarefa = localStorage.qtdtarefa;
 	//APAGAR HISTÓRICO DO JS
-	//localStorage.clear();
+	localStorage.clear();
 	
 	}
 };
@@ -174,31 +173,33 @@ function retrievestate() {
 		
 	
 
-/*Arrastar e Soltar Tarefas*/
-/*Arrastar para dentro de uma tarefa para Criar Sub-Tarefas de uma Tarefa Mãe*/
-/*Possibilidade de Criar Sub Tarefas de SubTarefas basta arrastar na ordem*/
+/*Drag + Drop Tarefas*/
+
+window.allowDrop = function(ev) {
+    ev.preventDefault();
+    if (ev.target.getAttribute("draggable") == "true")
+        ev.dataTransfer.dropEffect = "none"; // dropping is not allowed
+    else
+        ev.dataTransfer.dropEffect = "all"; // drop it like it's hot
+};
+
+window.drag = function(ev) {
+    ev.dataTransfer.setData("id", ev.target.id);
+};
+
+window.drop = function(ev) {
+    ev.preventDefault();
+    var id = ev.dataTransfer.getData("id");
+
+    var dragged = document.getElementById(id);
+    ev.target.appendChild(dragged);
+    dragged.className += " dropped";
+};
 
 
-//Impossibilita o Drop em outra área
-	function dntDrop(e) {
-    return false;
-}
-//Permite o drop de itens
-	function allowDrop(e) {
-    e.preventDefault();
-}
-//Função para arrastar o conteúdo e transferi-lo
-function drag(e) {
-    e.dataTransfer.setData("text/html", e.target.id);
-}
 
-//Função para soltar o conteúdo e criar um nó.
-function drop(e) {
-    e.preventDefault();
-    var data = e.dataTransfer.getData("text/html");
-    e.target.append(document.getElementById(data));
-}
-	
+
+
 	
 	
 	/*Abrir e fechar job lateral*/
