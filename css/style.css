@@ -52,7 +52,7 @@ aside .minimizar i{color:#d5dce0;font-size:13px;margin-left:10px;}
 .tarefas .job{width: 95%;display: block;margin: 20px auto;border-bottom: 1px solid #d5dce0;padding-bottom:15px;min-height: 19px;}
 .tarefas .job .job{border-bottom:0px;padding-bottom:0px;}
 .tarefas .job:before{content:"\f00c";font-family:"Font Awesome 5 Free";font-weight:600;border:1px solid #9fa9b2;border-radius:100%;padding:5px;vertical-align:baseline;color:#9fa9b2;margin-right:10px;}
-
+.tarefas .job:hover{cursor:pointer;}
 .desctarefa{display:none;}
 
 #listagem{height:80%;}
