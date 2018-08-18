@@ -125,7 +125,6 @@ function novaTarefa() {
 		var desc = document.createElement("div");
 		desc.setAttribute("id", "desc" + localStorage.qtdtarefa + "");
 		desc.setAttribute("class", "desctarefa");
-		desc.setAttribute("draggable", "true");
 		desc.focus();
 		/*Cria uma Tarefa Nova*/
 		var textnode = document.createTextNode('');
@@ -177,11 +176,12 @@ function retrievestate() {
 
 window.allowDrop = function(ev) {
     ev.preventDefault();
-    if (ev.target.getAttribute("draggable") == "true")
-        ev.dataTransfer.dropEffect = "none"; // dropping is not allowed
-    else
-        ev.dataTransfer.dropEffect = "all"; // drop it like it's hot
-};
+	// Block o drop em elementos que contenham draggable = true no atributo.
+    if (ev.target.getAttribute("draggable") == "true"){
+        ev.dataTransfer.dropEffect = "none"; 
+   }else{
+        ev.dataTransfer.dropEffect = "all";
+		}};
 
 window.drag = function(ev) {
     ev.dataTransfer.setData("id", ev.target.id);
@@ -190,10 +190,9 @@ window.drag = function(ev) {
 window.drop = function(ev) {
     ev.preventDefault();
     var id = ev.dataTransfer.getData("id");
-
     var dragged = document.getElementById(id);
     ev.target.appendChild(dragged);
-    dragged.className += " dropped";
+    
 };
 
 
