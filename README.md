@@ -18,7 +18,8 @@ Montar uma aplicação com HTML, CSS, JS seguindo os pedidos:
 
 #Implementações Adicionais ( Matheus Prado / Sugestões )
 
-1º A Página persiste os dados de maneira que ao fechar o navegador o conteúdo digitado não suma. /*( Ver issues ¹ no GitHub ).*/
+1º A Página persiste os dados de maneira que ao fechar o navegador o conteúdo digitado não suma.
+/*( Ver issues ¹ no GitHub )*/
 
 2º Clique e arraste a tarefa para re-ordernar a lista de tarefas.
 
